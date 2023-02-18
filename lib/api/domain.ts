@@ -13,7 +13,7 @@ export async function createDatabaseDomain(
       domain,
       user: {
         connect: {
-          email: session.user.email as string
+          email: session?.user?.email as string
         }
       }
     }

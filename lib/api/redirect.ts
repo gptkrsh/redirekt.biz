@@ -11,7 +11,7 @@ export function createRedirect(domain: string, pattern: RegExp, targetUrl: strin
       },
       owner: {
         connect: {
-          email: session.user.email as string
+          email: session?.user?.email as string
         }
       },
       pattern: pattern.source,
