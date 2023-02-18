@@ -16,7 +16,7 @@ export default async function post(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const { domain, subdomain = false } = req.query;
+  const { domain } = req.query;
 
   if (Array.isArray(domain))
     return res
@@ -24,20 +24,6 @@ export default async function post(req: NextApiRequest, res: NextApiResponse) {
       .end("Bad request. domain parameter cannot be an array.");
 
   try {
-    if (subdomain) {
-      const sub = (domain as string).replace(/[^a-zA-Z0-9/-]+/g, "");
-
-      const data = await prisma.site.findUnique({
-        where: {
-          subdomain: sub,
-        },
-      });
-
-      const available = data === null && sub.length !== 0;
-
-      return res.status(200).json(available);
-    }
-
     const response = await fetch(
       `https://api.vercel.com/v6/domains/${domain}/config?teamId=${process.env.TEAM_ID_VERCEL}`,
       {
