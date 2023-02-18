@@ -29,14 +29,6 @@ export default function Navbar() {
             <div className="flex items-center">
               {session ? (
                 <>
-                  <button
-                    type="button"
-                    className="flex-shrink-0 rounded-full bg-slate-800 p-1"
-                  >
-                    <span className="sr-only">View notifications</span>
-                    <BellIcon className="h-6 w-6" aria-hidden="true" />
-                  </button>
-
                   <Menu as="div" className="relative ml-4 flex-shrink-0">
                     <div>
                       <Menu.Button className="flex rounded-full bg-slate-800 text-sm">
@@ -88,7 +80,7 @@ export default function Navbar() {
               ) : (
                 <button
                   type="button"
-                  onClick={() => signIn("auth0")}
+                  onClick={() => signIn("github")}
                   className="flex justify-between items-center rounded px-3 py-2 text-sm font-medium hover:bg-slate-700"
                 >
                   Login
