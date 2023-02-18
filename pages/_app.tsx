@@ -5,6 +5,7 @@ import { cal, inter } from "@/styles/fonts";
 import "@/styles/globals.css";
 
 import type { AppProps } from "next/app";
+import Navbar from "@/components/Layout/Navbar";
 
 export default function App({
   Component,
@@ -13,6 +14,7 @@ export default function App({
   return (
     <SessionProvider session={session}>
       <main className={`${cal.variable} ${inter.variable}`}>
+        <Navbar />
         <Component {...pageProps} />
       </main>
     </SessionProvider>

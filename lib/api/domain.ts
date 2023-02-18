@@ -2,8 +2,6 @@ import prisma from "@/lib/prisma";
 import { HttpMethod } from "@/types";
 import { Session } from "next-auth";
 
-import type { NextApiRequest, NextApiResponse } from "next";
-
 export async function createDatabaseDomain(
   domain: string,
   session: Session
