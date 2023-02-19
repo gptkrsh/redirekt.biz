@@ -22,7 +22,7 @@ export default function Hero() {
           <button
             role="button"
             className="bg-slate-900 hover:bg-slate-700 hover:text-white font-bold py-3 px-6 rounded transition-all text-xl"
-            onClick={() => signIn('gitlab')}>
+            onClick={() => signIn('github')}>
             Get Started
           </button>
           : <Link href="/dashboard" className="bg-slate-900 hover:bg-slate-700 hover:text-white font-bold py-3 px-6 rounded transition-all text-xl">

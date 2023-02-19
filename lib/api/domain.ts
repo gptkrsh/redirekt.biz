@@ -44,7 +44,7 @@ export async function createVercelDomain(
   domain: string,
 ) {
   const response = await fetch(
-    `https://api.vercel.com/v9/projects/${process.env.PROJECT_ID_VERCEL}/domains?teamId=${process.env.TEAM_ID_VERCEL}`,
+    `https://api.vercel.com/v9/projects/${process.env.PROJECT_ID_VERCEL}/domains`,
     {
       body: `{\n  "name": "${domain}"\n}`,
       headers: {
@@ -116,7 +116,7 @@ export async function checkVercelDomain(
   let verificationResponse = null
   if (!domainJson.verified) {
     const verificationRes = await fetch(
-      `https://api.vercel.com/v9/projects/${process.env.PROJECT_ID_VERCEL}/domains/${domain}/verify?teamId=${process.env.TEAM_ID_VERCEL}`,
+      `https://api.vercel.com/v9/projects/${process.env.PROJECT_ID_VERCEL}/domains/${domain}/verify`,
       {
         method: 'POST',
         headers: {
