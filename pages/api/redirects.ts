@@ -7,7 +7,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import prisma from "@/lib/prisma";
 import { getVercelDomain } from "@/lib/api";
 
-export default async function domains(
+export default async function redirects(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -17,24 +17,15 @@ export default async function domains(
 
   switch (req.method) {
     case HttpMethod.GET:
-      const db = await prisma.domain.findMany({
+      const db = await prisma.redirect.findMany({
         where: {
-          user: {
+          owner: {
             email: session?.user?.email as string
           }
         }
       })
 
-      let vercel: Array<Object> = []
-
-      for (const row of db) {
-        vercel = [...vercel, await getVercelDomain(row.domain)]
-      }
-
-      return res.status(200).json({
-        db,
-        vercel
-      });
+      return res.status(200).json(db);
 
     default:
       res.setHeader("Allow", [HttpMethod.GET]);

@@ -60,8 +60,8 @@ model VerificationToken {
 
 model Redirect {
   id        String @id @default(cuid())
-  domain    Domain @relation(fields: [domainId], references: [id], onDelete: Cascade)
-  domainId  String @unique
+  domain    Domain @relation(fields: [domainUrl], references: [domain], onDelete: Cascade)
+  domainUrl  String @unique
   pattern   String
   targetUrl String
   owner     User   @relation(fields: [ownerId], references: [id], onDelete: Cascade)

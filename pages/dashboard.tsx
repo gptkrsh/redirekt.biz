@@ -1,4 +1,5 @@
 import Domains from "@/components/Dashboard/Domains";
+import Redirects from "@/components/Dashboard/Redirects";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 
@@ -20,6 +21,7 @@ export default function Dashboard() {
         Welcome to your dashboard. You can manage your redirects here.
       </p>
       <Domains />
+      <Redirects />
     </div>
   );
 }
