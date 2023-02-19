@@ -1,137 +1,51 @@
-<p align="center">
-  <a href="https://demo.vercel.pub">
-    <img src="https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png" height="96">
-    <h3 align="center">Platforms Starter Kit</h3>
-  </a>
-</p>
+## Inspiration
 
-<p align="center">
-  The <em>all-in-one</em> starter kit <br/>
-  for building platforms on Vercel.
-</p>
+Day before yesterday, I registered myself a domain name `krshg.tech` and I wanted to redirect my previous one, but there wasn't a great solution that had full transparency (was open source), so I decided to hand in my hand complete with a gauntlet of js code to fight this end game against we (open source) and closed source software!
 
-<p align="center">
-  <a href="#introduction"><strong>Introduction</strong></a> ·
-  <a href="https://vercel.com/guides/nextjs-multi-tenant-application"><strong>Guide</strong></a> ·
-  <a href="https://demo.vercel.pub/"><strong>Demo</strong></a> ·
-  <a href="https://steven.vercel.pub/kitchen-sink"><strong>Kitchen Sink</strong></a> ·
-  <a href="#contributing"><strong>Contributing</strong></a>
-</p>
-<br/>
+After getting the approval of Dr. Strangest (Ritvi), we decided to build this awesome tool that can redirect domains to urls.
 
-## Deploy Your Own
+## What it does
 
-[Read the guide](https://vercel.com/guides/nextjs-multi-tenant-application) to learn how to deploy your own version of this template.
+It's an **OPEN SOURCE** tool to redirect domains to urls 👀 I know, you probably wanna do the spider man dance after this.
 
-## Introduction
+![](https://media1.tenor.com/images/4e8a2636342abc4c7c0a60839a2dedd0/tenor.gif?itemid=13354292)
 
-Multi-tenant applications serve multiple customers across different subdomains/custom domains with a single unified codebase. 
+But really, it's as simple as redirecting domains 🔥
 
-For example, our demo is a multi-tenant application:
+## How we built it
 
-- Subdomain: [demo.vercel.pub](http://demo.vercel.pub)
-- Custom domain: [platformize.co](http://platformize.co) (maps to [demo.vercel.pub](http://demo.vercel.pub))
-- Build your own: [app.vercel.pub](http://app.vercel.pub)
+We just threw in a bunch of infinity stones, here is how they go-
 
-Another example is [Hashnode](https://vercel.com/customers/hashnode), a popular blogging platform. Each writer has their own unique `.hashnode.dev` subdomain for their blog:
+1. NextJS (The power stone) - this is what allows up to have a App
+2. TailwindCSS (The reality stone) - adds beauty to our broken code
+3. Prisma (The time stone) - allows us to quickly migrate back if 404 deletes are database
+4. Vercel (or maybe Bercel) (The mind stone) - the place where we deploy and also the celestial that allows us a domain api that we use
+5. GitHub (The space stone) - the hub/space where we host our code/issues and project management for better cooperation [But I don't have any friends to collaborate with it 😭, will octocat be one?]
+6. Ritvi (Idk what the 6th stone is) - the person who approved this Idea
 
-- [eda.hashnode.dev](https://eda.hashnode.dev/)
-- [katycodesstuff.hashnode.dev](https://katycodesstuff.hashnode.dev/)
-- [akoskm.hashnode.dev](https://akoskm.hashnode.dev/)
+## Challenges we ran into
 
-Users can also map custom domains to their `.hashnode.dev` subdomain:
+"Everything is a challenge, but a challenge is a man, so man is everything" -- Candrew Toot, 2047
 
-- [akoskm.com](https://akoskm.com/) → [akoskm.hashnode.dev](https://akoskm.hashnode.dev/)
+Ok but seriously-
 
-This repository makes it easier than ever for creators to build their own platform.
+1. Getting approval on the idea, solved using Ritvi's cosmic powers
+2. NextJs getting bunch of updates and screwing our code (Abra kadabra GitHub commit revertoooo!)
+3. Domains API doesn't have a js library 💀 Coded up a micro library 🔥
+4. Not having friends, created fake ones with the reality stone ;)
 
-## Template features
+## Accomplishments that we're proud of
 
-Forget manually setting up CNAME records, wrestling with DNS, or making custom server rewrite rules with NGINX. With Vercel and the Platforms Starter Kit, you can focus on building the next big thing.
+I mean really, I am the most proud to solve the fourth challenge, but for the record, I'll say solving the 3th one was actually effort-ful (is that a word?) and now I will just copy-pasta it the next times lol
 
-- **Custom domains**: Subdomain and custom domains support with [Edge Functions](https://vercel.com/features/edge-functions) and the [Vercel Domains API](https://domains-api.vercel.app/).
-- **Static generation with ISR**: Performance without sacrificing personalization, by combining [Incremental Static Regeneration](https://vercel.com/docs/concepts/next.js/incremental-static-regeneration) (ISR) and [Middleware](https://vercel.com/docs/concepts/functions/edge-functions#middleware). ISR allows you to create new content (with custom domains) on demand without needing to redeploy your application.
-- **Uploading custom images**: Allow your customers to upload custom thumbnail images with our Cloudinary integration.
-- **Static tweets**: Avoid [Cumulative Layout Shift](https://vercel.com/blog/core-web-vitals) (CLS) from the native Twitter embed by using our [static tweets implementation](https://static-tweets-tailwind.vercel.app/) (supports image, video, gif, poll, retweets, quote retweets, and more).
+## What we learned
 
-## Examples of platforms
+We learnt to conquer the mad titan, I mean the vercel domains api, we also used a bunch of stuff like prisma and typescript which further enhanced our JavaScript cosmic powers :D
 
-Vercel customers like [Hashnode](https://vercel.com/customers/hashnode), [Super](https://super.so), and [Cal.com](https://cal.com) are building scalable platforms on top of Vercel and Next.js. There are multiple types of platforms you can build with this starter kit:
+## What's next for Redirekt.biz
 
-### 1. Content creation platforms
+~~Using the stones to conquer the corporate world and next year come as a sponsor to workathon~~
 
-These are content-heavy platforms (blogs) with simple, standardized page layouts and route structure. 
+I mean-
 
-> “With Vercel, we spend less time managing our infrastructure and more time delivering value to our users.” — Sandeep Panda, Co-founder, Hashnode
-
-1. [Hashnode](https://hashnode.com)
-2. [Mirror.xyz](https://mirror.xyz/)
-3. [Read.cv](https://read.cv/)
-
-### 2. Website & e-commerce store builders
-
-No-code site builders with customizable pages. 
-
-By using Next.js and Vercel, [Super](https://super.so/) has fast, globally distributed websites with a no-code editor (Notion). Their customers get all the benefits of Next.js (like [Image Optimization](https://nextjs.org/docs/basic-features/image-optimization)) without touching any code.
-
-1. [Super.so](https://super.so)
-2. [Typedream](https://typedream.com)
-3. [Makeswift](https://www.makeswift.com/)
-
-### 3. B2B2C platforms
-
-Multi-tenant authentication, login, and access controls.
-
-With Vercel and Next.js, platforms like [Instatus](https://instatus.com) are able to create status pages that are *10x faster* than competitors.
-
-1. [Instatus](https://instatus.com/)
-2. [Cal.com](https://cal.com/)
-3. [Dub](https://dub.sh/)
-
-## Built on open source
-
-This working demo site was built using the Platforms Starter Kit and:
-
-- [Next.js](https://nextjs.org/) as the React framework
-- [Tailwind](https://tailwindcss.com/) for CSS styling
-- [Prisma](https://prisma.io/) as the ORM for database access
-- [PlanetScale](https://planetscale.com/) as the database (MySQL)
-- [NextAuth.js](https://next-auth.js.org/) for authentication
-- [Vercel](http://vercel.com/) for deployment
-
-We also have another [example](https://github.com/vercel/examples/tree/main/solutions/platforms-slate-supabase) of the Platforms Starter Kit that uses Supabase for the database and Slate.js for the text editor.
-
-## Frequently Asked Questions
-
-- **Should we be generating static webpages with `getStaticProps` and `getStaticPaths` at build time? It doesn't seem to be very scalable.**
-
-  For scale, we recommend using [Incremental Static Regeneration](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) instead. This basically means that instead of generating all pages at build time, you only specify a subset of pages and then generate the rest on the fly. Then when someone requests that page, all subsequent requests will be cached on the Vercel edge. You can also use [on-demand ISR](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation) to programmatically invalidate caches per page every time someone makes a change to it, which is what we do [here](https://github.com/vercel/platforms/blob/1b2bd00055bbbdde8f2dcc89e0bdb2c3f8488f97/lib/api/post.ts#L243-L257).
-
-- **Is it wise to be using the `/_sites/[site]` path to serve all static pages/website? Wouldn't that lead to a significant amount of load on a single Next.js server?**
-
-  The beauty about a serverless setup is you won’t have to worry about load since each request invokes a separate serverless function, and once it’s cached, you don’t invoke the server anymore (the page is served directly from the Vercel edge). Read more about the [Vercel Edge Network](https://vercel.com/docs/concepts/edge-network/overview) and [how caching works](https://vercel.com/docs/concepts/edge-network/caching).
-
-
-## Caveats
-
-- This template does not work with i18n, which is an [advanced feature in Next.js](https://nextjs.org/docs/advanced-features/i18n-routing).
-
-
-## Contributing
-
-- [Start a discussion](https://github.com/vercel/platforms/discussions) with a question, piece of feedback, or idea you want to share with the team.
-- [Open an issue](https://github.com/vercel/platforms/issues) if you believe you've encountered a bug with the starter kit.
-
-## Author
-
-- Steven Tey ([@steventey](https://twitter.com/steventey))
-
-## License
-
-The MIT License.
-
----
-
-<a aria-label="Vercel logo" href="https://vercel.com">
-  <img src="https://badgen.net/badge/icon/Made%20by%20Vercel?icon=zeit&label&color=black&labelColor=black">
-</a>
+- Adding in regex pattern support (we did not add it this time, because it needs complicated security logic so that I don't use your domain and you don't use my domain, but we will conquer it, like we conquered thanos's army 🫡)

@@ -19,7 +19,7 @@ export default async function domain(
 
   switch (req.method) {
     case HttpMethod.POST:
-      return res.status(200).json(await createRedirect(domain, new RegExp('.*'), targetUrl, session));
+      return res.status(200).json(await createRedirect(domain, new RegExp('.*'), decodeURIComponent(targetUrl), session));
 
     default:
       res.setHeader("Allow", [HttpMethod.POST]);

@@ -55,7 +55,7 @@ export default function Redirects() {
               const targetUrl = targetUrlInput.current?.value
               const domain = domainSelectInput.current?.value
               if (!targetUrl || !domain) return
-              const res = await fetch(`/api/redirect?targetUrl=${targetUrl}&domain=${domain}`, {
+              const res = await fetch(`/api/redirect?targetUrl=${encodeURIComponent(targetUrl)}&domain=${domain}`, {
                 method: 'POST'
               })
               console.log(await res.json())
