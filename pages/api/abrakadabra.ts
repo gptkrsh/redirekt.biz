@@ -6,19 +6,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   console.log(domain)
 
-  const db = await prisma.redirect.findMany({
+  const db = await prisma.redirect.findUnique({
     where: {
-      domain: {
-        domain: domain as string
-      }
+      domainUrl: domain as string
     }
   })
 
-  console.log(db)
-
   if (!db) {
-    return res.redirect(301, '/')
+    return res.redirect('/')
   }
 
-  return res.redirect(301, db[0]?.targetUrl as string)
+  return res.redirect(db.domainUrl)
 }

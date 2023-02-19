@@ -14,18 +14,15 @@ export const config = {
 };
 
 export default async function middleware(req: NextRequest) {
-  const url = req.nextUrl;
-
   const hostname = req.headers.get("host") || "redirekt.biz";
 
-  const isBaseApp = process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
-    ? hostname === "redirekt.biz"
-    : hostname === "localhost:3000";
+  const isBaseApp =
+    process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
+      ? hostname === "redirekt.biz" || hostname === process.env.VERCEL_URL
+      : hostname === "localhost:3000";
 
-  if (isBaseApp)
-    return NextResponse.next();
-  else
-    return NextResponse.redirect(`/api/abrakadabra?domain=${hostname}`)
-
-  return NextResponse.next();
+  if (isBaseApp) return NextResponse.next();
+  else {
+    return NextResponse.redirect(new URL(`/api/abrakadabra?domain=${hostname}`, req.url))
+  }
 }
