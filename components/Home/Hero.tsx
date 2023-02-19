@@ -10,12 +10,12 @@ export default function Hero() {
       data-aos="fade-down"
     >
       <h1 className="text-5xl font-bold text-center m-0">
-        Don't let {" "}<span className="text-blue-500">redirecting</span> {" "}
+        Don{"'"}t let {" "}<span className="text-blue-500">redirecting</span> {" "}
         <span className="text-violet-500">rekt</span> {" "}
         <span className="text-indigo-500">you</span>
       </h1>
       <p className="text-lg mt-4 max-w-prose text-center">
-        Redirect liek a pro with REDIREKT. It's free, open source, and easy to use.
+        Redirect like  a pro with REDIREKT. It{"'"}s free, open source, and easy to use.
       </p>
       <div>
         {!session ?
